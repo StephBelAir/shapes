@@ -11,6 +11,7 @@ public class Rectangle extends Form {
 
     public Rectangle(int id,double width, double height){
         super();
+        this.id= id;
         this.width = width;
         this.height = height;
     }
