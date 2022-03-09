@@ -10,7 +10,7 @@ public class Rectangle extends Form {
     /*--==================== Constructor Rectangle ====================--*/
 
     public Rectangle(int id,double width, double height){
-        this.setId(id);
+        super();
         this.width = width;
         this.height = height;
     }
@@ -18,12 +18,13 @@ public class Rectangle extends Form {
     /*--==================== Overriding the toString() method  ====================--*/
     @Override
     public String toString(){
-        return Utilities.newLine+
-                "--==================== Rectangle ====================--"+Utilities.newLine+
-                "La longueur est de : "+this.width+Utilities.newLine+
-                "La largeur est de : "+this.height+Utilities.newLine+
-                "Le perimètre du rectangle est de : "+this.perimetre()+Utilities.newLine+
-                "La surface du rectangle est de : "+this.surface()+ " ²";
+        return  "Rectangle{"+
+                ", id=" + id+
+                ", longueur="+this.width+
+                ", largeur="+this.height+
+                ", perimètre="+this.perimetre()+
+                ", surface="+this.surface()+
+                '}';
     }
 
     /*--==================== Rectangle getter setter  ====================--*/

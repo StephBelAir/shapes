@@ -4,7 +4,7 @@ public abstract class Form{
 
     public abstract double perimetre();
     public abstract double surface();
-    private int id;
+    protected int id;
 
     public int getId() {
         return id;
