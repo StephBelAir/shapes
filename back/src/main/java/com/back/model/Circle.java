@@ -19,10 +19,14 @@ public class Circle extends Form {
 
     public String toString(){
         return
-                "--===================== Cercle ======================--"+Utilities.newLine+
-                        "Le rayon est de : "+this.radius+Utilities.newLine+
-                        "Le perimètre du cercle est de : "+this.perimetre()+Utilities.newLine+
-                        "La surface du cercle est de : "+this.surface()+ " ²";
+                "Form{"+
+                        ", id=" + id+
+                        ", type=" + "Circle"+
+                        ", longueur="+this.radius+
+                        ", perimètre="+this.perimetre+
+                        ", surface="+this.surface+
+                        '}';
+
     }
 
     /*--==================== Circle getter setter  ====================--*/
@@ -37,13 +41,13 @@ public class Circle extends Form {
 
     /*--==================== Perimetre getter ====================--*/
 
-    public double perimetre(){
+    public double getPerimetre(){
         return 2*Math.PI*this.radius;
     }
 
     /*--==================== Surface getter ====================--*/
 
-    public double surface(){
+    public double getSurface(){
         return Math.PI*(this.radius*this.radius);
     }
 }

@@ -22,9 +22,9 @@ public class Triangle extends Form {
                 "Form{"+
                         ", id=" + id+
                         ", type=" + "Triangle"+
-                        ", base="+this.base+Utilities.newLine+
-                        ", perimetre="+this.perimetre()+Utilities.newLine+
-                        ", surface="+this.surface()+
+                        ", base="+this.base+
+                        ", perimetre="+this.perimetre+
+                        ", surface="+this.surface+
                         '}';
     }
 
@@ -40,15 +40,14 @@ public class Triangle extends Form {
 
     /*--==================== Perimetre getter ====================--*/
 
-    public double perimetre(){
+    public double getPerimetre(){
         return 3*this.base;
     }
 
     /*--==================== Surface getter with Heron ====================--*/
 
-    public double surface(){
-        double halfPerim = this.perimetre()/2;
+    public double getSurface(){
+        double halfPerim = this.getPerimetre()/2;
         return Math.sqrt(halfPerim*(halfPerim-this.base)*(halfPerim-this.base)*(halfPerim-this.base));
-
     }
 }

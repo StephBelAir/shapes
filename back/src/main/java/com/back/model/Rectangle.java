@@ -13,8 +13,6 @@ public class Rectangle extends Form {
     public Rectangle(int id, double width, double height){
         super();
         this.id = id;
-//        this.surface = setSurface();
-//        this.perimetre = setPerimetre();
         this.width = width;
         this.height = height;
     }
@@ -54,13 +52,13 @@ public class Rectangle extends Form {
     }
 
     /*--==================== Perimetre getter ====================--*/
-//    @Override
+
     public double getPerimetre(){
         return 2*(this.width+this.height);
     }
 
     /*--==================== Surface getter ====================--*/
-//    @Override
+
     public double getSurface(){
         return this.width*this.height;
     }
