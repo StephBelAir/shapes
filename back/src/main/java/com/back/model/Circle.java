@@ -9,7 +9,9 @@ public class Circle extends Form {
 
     /*--==================== Constructor Circle ====================--*/
 
-    public Circle(double radius){
+    public Circle(int id, double radius){
+        super();
+        this.id= id;
         this.radius = radius;
     }
 

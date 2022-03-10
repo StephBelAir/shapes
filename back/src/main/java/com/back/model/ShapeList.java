@@ -27,14 +27,14 @@ public class ShapeList {
     public double TotalSurface() {
         double TotalSurface = 0;
         for (Form form: totalShapes) {
-            TotalSurface += form.surface();;
+            TotalSurface += form.getSurface();
         }
         return TotalSurface;
     }
     public double TotalPerimetre() {
         double TotalPerimetre = 0;
         for (Form form: totalShapes) {
-            TotalPerimetre += form.perimetre();
+            TotalPerimetre += form.getPerimetre();
         }
         return TotalPerimetre;
     }

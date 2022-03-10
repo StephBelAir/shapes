@@ -1,5 +1,6 @@
 package com.back.model;
 
+
 /*--==================== Attributs Classe Rectangle  ====================--*/
 
 public class Rectangle extends Form {
@@ -9,9 +10,11 @@ public class Rectangle extends Form {
 
     /*--==================== Constructor Rectangle ====================--*/
 
-    public Rectangle(int id,double width, double height){
+    public Rectangle(int id, double width, double height){
         super();
-        this.id= id;
+        this.id = id;
+//        this.surface = setSurface();
+//        this.perimetre = setPerimetre();
         this.width = width;
         this.height = height;
     }
@@ -19,12 +22,13 @@ public class Rectangle extends Form {
     /*--==================== Overriding the toString() method  ====================--*/
     @Override
     public String toString(){
-        return  "Rectangle{"+
+        return  "Form{"+
                 ", id=" + id+
+                ", type=" + "Rectangle"+
                 ", longueur="+this.width+
                 ", largeur="+this.height+
-                ", perimètre="+this.perimetre()+
-                ", surface="+this.surface()+
+                ", perimètre="+this.perimetre+
+                ", surface="+this.surface+
                 '}';
     }
 
@@ -38,6 +42,9 @@ public class Rectangle extends Form {
         return this.height;
     }
 
+
+
+
     public void setWidth(double mywidth){
         this.width = mywidth;
     }
@@ -47,14 +54,14 @@ public class Rectangle extends Form {
     }
 
     /*--==================== Perimetre getter ====================--*/
-    @Override
-    public double perimetre(){
+//    @Override
+    public double getPerimetre(){
         return 2*(this.width+this.height);
     }
 
     /*--==================== Surface getter ====================--*/
-    @Override
-    public double surface(){
+//    @Override
+    public double getSurface(){
         return this.width*this.height;
     }
 }

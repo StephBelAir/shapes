@@ -9,7 +9,9 @@ public class Triangle extends Form {
 
     /*--==================== Constructor Triangle ====================--*/
 
-    public Triangle(double base){
+    public Triangle(int id, double base){
+        super();
+        this.id= id;
         this.base = base;
     }
 
@@ -17,10 +19,13 @@ public class Triangle extends Form {
 
     public String toString(){
         return
-                "--==================== Triangle =====================--"+Utilities.newLine+
-                        "La longueur de la base est de : "+this.base+Utilities.newLine+
-                        "Le perimètre du triangle est de : "+this.perimetre()+Utilities.newLine+
-                        "La surface du triangle est de : "+this.surface()+ " ²";
+                "Form{"+
+                        ", id=" + id+
+                        ", type=" + "Triangle"+
+                        ", base="+this.base+Utilities.newLine+
+                        ", perimetre="+this.perimetre()+Utilities.newLine+
+                        ", surface="+this.surface()+
+                        '}';
     }
 
     /*--==================== Triangle getter setter  ====================--*/

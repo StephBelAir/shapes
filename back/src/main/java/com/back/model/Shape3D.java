@@ -11,7 +11,7 @@ public class Shape3D {
     /*--==================== Méthodes  ====================--*/
 
     public double volume() {
-        return form.surface() * this.depth;
+        return form.getSurface() * this.depth;
     }
 
     @Override
