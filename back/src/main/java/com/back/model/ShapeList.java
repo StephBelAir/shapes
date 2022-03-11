@@ -12,15 +12,7 @@ public class ShapeList {
         return totalShapes;
     }
 
-    /*--==================== Overriding the toString() method  ====================--*/
-    @Override
-    public String toString(){
-        return Utilities.newLine+
-                "--===================== Total =======================--"+Utilities.newLine+
 
-                "Le perimètre total est de : "+this.TotalPerimetre()+Utilities.newLine+
-                "La surface total est de : "+this.TotalSurface()+ " ²";
-    }
 
 
 

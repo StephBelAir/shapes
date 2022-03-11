@@ -18,14 +18,6 @@ public class Shape3DList {
         return allVolumes;
     }
 
-    @Override
-    public String toString(){
-        return Utilities.newLine+
-                "--===================== Volume Total ================--"+Utilities.newLine+
-                "La volume total est de : "+this.totalShapes3D()+ "³";
-    }
-
-
 
     /*--==================== Getter & Setter  ====================--*/
 

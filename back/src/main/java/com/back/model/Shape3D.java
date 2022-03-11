@@ -6,7 +6,7 @@ public class Shape3D {
 
     private Form form;
     private double depth;
-    private String name;
+    private String type; // form.type ??
 
     /*--==================== Méthodes  ====================--*/
 
@@ -14,13 +14,6 @@ public class Shape3D {
         return form.getSurface() * this.depth;
     }
 
-    @Override
-    public String toString(){
-        return Utilities.newLine+
-                "--===================== Shape 3D ====================--"+Utilities.newLine+
-                "Le volume de "+this.getName()+" est de : "+this.volume()+ "³";
-
-    }
 
     /*--==================== Getter & Setter  ====================--*/
 
@@ -40,20 +33,20 @@ public class Shape3D {
         this.depth = depth;
     }
 
-    public String getName() {
-        return this.name;
+    public String getType() {
+        return this.type;
     }
 
-    public void setName(String name){
-        this.name = name;
+    public void setType(String type){
+        this.type = type;
     }
 
 
     /*--==================== Constructor  ====================--*/
 
-    public Shape3D(Form form, double depth, String name) {
+    public Shape3D(Form form, double depth, String type) {
         this.form = form;
         this.depth = depth;
-        this.name = name;
+        this.type = type;
     }
 }

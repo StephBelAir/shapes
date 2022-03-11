@@ -6,27 +6,19 @@ package com.back.model;
 public class Triangle extends Form {
 
     private double base = 0;
+    private String type = "Triangle";
+
 
     /*--==================== Constructor Triangle ====================--*/
 
-    public Triangle(int id, double base){
+    public Triangle(int id, String type ,double base){
         super();
         this.id= id;
+        this.type = type;
         this.base = base;
     }
 
-    /*--==================== Overriding the toString() method  ====================--*/
 
-    public String toString(){
-        return
-                "Form{"+
-                        ", id=" + id+
-                        ", type=" + "Triangle"+
-                        ", base="+this.base+
-                        ", perimetre="+this.perimetre+
-                        ", surface="+this.surface+
-                        '}';
-    }
 
     /*--==================== Triangle getter setter  ====================--*/
 
@@ -37,6 +29,12 @@ public class Triangle extends Form {
     public void setBase(double mybase){
         this.base = mybase;
     }
+
+
+    public String getType() { return this.type; }
+
+    public void setType(String mytype){ this.type = mytype; }
+
 
     /*--==================== Perimetre getter ====================--*/
 

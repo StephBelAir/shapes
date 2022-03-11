@@ -5,28 +5,17 @@ package com.back.model;
 public class Circle extends Form {
 
     private double radius = 0;
+    private String type = "Circle";
+
 
 
     /*--==================== Constructor Circle ====================--*/
 
-    public Circle(int id, double radius){
+    public Circle(int id, String type ,double radius){
         super();
         this.id= id;
+        this.type = this.type;
         this.radius = radius;
-    }
-
-    /*--==================== Overriding the toString() method  ====================--*/
-
-    public String toString(){
-        return
-                "Form{"+
-                        ", id=" + id+
-                        ", type=" + "Circle"+
-                        ", longueur="+this.radius+
-                        ", perimètre="+this.perimetre+
-                        ", surface="+this.surface+
-                        '}';
-
     }
 
     /*--==================== Circle getter setter  ====================--*/
@@ -38,6 +27,12 @@ public class Circle extends Form {
     public void setRadius(double myradius){
         this.radius = myradius;
     }
+
+
+    public String getType() { return this.type; }
+
+    public void setType(String mytype){ this.type = mytype; }
+
 
     /*--==================== Perimetre getter ====================--*/
 

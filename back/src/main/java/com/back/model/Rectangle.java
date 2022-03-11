@@ -7,28 +7,19 @@ public class Rectangle extends Form {
 
     private double width = 0;
     private double height = 0;
+    private String type = "Rectangle";
+
 
     /*--==================== Constructor Rectangle ====================--*/
 
-    public Rectangle(int id, double width, double height){
+    public Rectangle(int id, String type, double width, double height){
         super();
         this.id = id;
+        this.type = type;
         this.width = width;
         this.height = height;
     }
 
-    /*--==================== Overriding the toString() method  ====================--*/
-    @Override
-    public String toString(){
-        return  "Form{"+
-                ", id=" + id+
-                ", type=" + "Rectangle"+
-                ", longueur="+this.width+
-                ", largeur="+this.height+
-                ", perimètre="+this.perimetre+
-                ", surface="+this.surface+
-                '}';
-    }
 
     /*--==================== Rectangle getter setter  ====================--*/
 
@@ -40,7 +31,7 @@ public class Rectangle extends Form {
         return this.height;
     }
 
-
+    public String getType() { return this.type; }
 
 
     public void setWidth(double mywidth){
@@ -50,6 +41,9 @@ public class Rectangle extends Form {
     public void setHeight(double myheight){
         this.height = myheight;
     }
+
+    public void setType(String mytype){ this.type = mytype; }
+
 
     /*--==================== Perimetre getter ====================--*/
 
