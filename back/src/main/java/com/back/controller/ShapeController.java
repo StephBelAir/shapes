@@ -1,5 +1,6 @@
 package com.back.controller;
 
+import com.back.dao.CreateShape;
 import com.back.model.*;
 import org.springframework.web.bind.annotation.*;
 import com.back.dao.ShapeDao;
@@ -38,7 +39,7 @@ public class ShapeController {
         shapeDao.save(form);
     } */
 
-   @PostMapping(value = "/Form")
+   @PostMapping(value = "/Forms")
     public ResponseEntity<Form> ajouterForme(@RequestBody Form form){
         Form formAdded = shapeDao.save(form);
         if (Objects.isNull(formAdded)){
