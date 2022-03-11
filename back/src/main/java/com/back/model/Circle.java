@@ -5,16 +5,17 @@ package com.back.model;
 public class Circle extends Form {
 
     private double radius = 0;
-    private String type = "Circle";
-
 
 
     /*--==================== Constructor Circle ====================--*/
 
-    public Circle(int id, String type ,double radius){
-        super();
-        this.id= id;
-        this.type = this.type;
+    public Circle(){
+        this.type = "circle";
+    }
+
+    public Circle(int id, double radius){
+        super(id);
+        this.type = "circle";
         this.radius = radius;
     }
 
@@ -27,11 +28,6 @@ public class Circle extends Form {
     public void setRadius(double myradius){
         this.radius = myradius;
     }
-
-
-    public String getType() { return this.type; }
-
-    public void setType(String mytype){ this.type = mytype; }
 
 
     /*--==================== Perimetre getter ====================--*/

@@ -15,9 +15,9 @@ public class ShapeDaoImpl implements ShapeDao{
 
     static {
 
-        forms.add(new Circle(1, "Circle", 5));
-        forms.add(new Rectangle(2, "Rectangle" ,5, 10));
-        forms.add(new Triangle(3, "Triangle", 5));
+        forms.add(new Circle(1, 5));
+        forms.add(new Rectangle(2, 5, 10));
+        forms.add(new Triangle(3, 5));
 
     }
 

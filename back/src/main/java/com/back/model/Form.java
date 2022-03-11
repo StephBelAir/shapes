@@ -3,18 +3,14 @@ package com.back.model;
 public abstract class Form{
     protected int id;
     protected String type;
-    protected double perimetre;
-    protected double surface;
+
 
     /*--====================  Constructor   ====================--*/
 
 
-    public Form(){} // ??
-    public Form ( int id, String type, double perimetre, double surface){
+    public Form(){}
+    public Form ( int id){
         this.id = id;
-        this.type = type;
-        this.perimetre = perimetre;
-        this.surface = surface;
     }
 
     /*--====================  setter & getter   ====================--*/
@@ -23,8 +19,6 @@ public abstract class Form{
         this.id = id;
     }
     public void setType(String type) {this.type = type;}
-    public void setPerimetre(double perimetre) { this.perimetre = perimetre; }
-    public void setSurface(double surface) { this.surface = surface; }
 
     public int getId(){
         return id;
@@ -34,11 +28,7 @@ public abstract class Form{
         return type;
     }
 
-    public double getPerimetre(){
-        return perimetre;
-    }
+    public abstract double getPerimetre();
 
-    public double getSurface(){
-        return surface;
-    }
+    public abstract double getSurface();
 }

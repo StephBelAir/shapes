@@ -7,15 +7,17 @@ public class Rectangle extends Form {
 
     private double width = 0;
     private double height = 0;
-    private String type = "Rectangle";
 
 
     /*--==================== Constructor Rectangle ====================--*/
 
-    public Rectangle(int id, String type, double width, double height){
-        super();
-        this.id = id;
-        this.type = type;
+    public Rectangle(){
+        this.type = "rectangle";
+    }
+
+    public Rectangle(int id, double width, double height){
+        super(id);
+        this.type = "rectangle";
         this.width = width;
         this.height = height;
     }
@@ -31,8 +33,6 @@ public class Rectangle extends Form {
         return this.height;
     }
 
-    public String getType() { return this.type; }
-
 
     public void setWidth(double mywidth){
         this.width = mywidth;
@@ -41,8 +41,6 @@ public class Rectangle extends Form {
     public void setHeight(double myheight){
         this.height = myheight;
     }
-
-    public void setType(String mytype){ this.type = mytype; }
 
 
     /*--==================== Perimetre getter ====================--*/

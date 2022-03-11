@@ -6,15 +6,18 @@ package com.back.model;
 public class Triangle extends Form {
 
     private double base = 0;
-    private String type = "Triangle";
 
 
     /*--==================== Constructor Triangle ====================--*/
 
-    public Triangle(int id, String type ,double base){
+    public Triangle() {
+        this.type = "triangle";
+    }
+
+    public Triangle(int id, double base){
         super();
         this.id= id;
-        this.type = type;
+        this.type = "triangle";
         this.base = base;
     }
 
@@ -29,11 +32,6 @@ public class Triangle extends Form {
     public void setBase(double mybase){
         this.base = mybase;
     }
-
-
-    public String getType() { return this.type; }
-
-    public void setType(String mytype){ this.type = mytype; }
 
 
     /*--==================== Perimetre getter ====================--*/
