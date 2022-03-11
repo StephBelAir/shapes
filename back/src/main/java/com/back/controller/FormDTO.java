@@ -14,13 +14,13 @@ public class FormDTO {
     public Form createShape () {
         Form f = null;
         switch (type) {
-            case "Rectangle":
+            case "rectangle":
                 f = new Rectangle(1, this.length, this.height);
                 break;
-            case "Circle":
+            case "circle":
                 f = new Circle(1, this.length);
                 break;
-            case "Triangle":
+            case "triangle":
                 f = new Triangle(1, this.length);
                 break;
         }
