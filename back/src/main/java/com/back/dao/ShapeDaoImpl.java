@@ -41,4 +41,9 @@ public class ShapeDaoImpl implements ShapeDao{
         forms.add(form);
         return form;
     }
+
+    @Override
+    public void deleteById(Form form) throws Exception{
+        forms.remove(form);
+    }
 }

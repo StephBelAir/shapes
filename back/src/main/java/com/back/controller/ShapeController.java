@@ -32,10 +32,6 @@ public class ShapeController {
        return shapeDao.findById(id);
     }
 
- /*   @PostMapping(value = "/Forms")
-    public void ajouterForm(@RequestBody Form form) {
-        shapeDao.save(form);
-    } */
 
    @PostMapping(value = "/Forms")
     public ResponseEntity<Form> ajouterForme(@RequestBody FormDTO infoEnvoyeParLeUserQuiEstUnFormDTO){
@@ -52,4 +48,12 @@ public class ShapeController {
         return ResponseEntity.created(location).build();
     }
 
+
+    @DeleteMapping("/Forms/{id}")
+    public ResponseEntity<Void> delete(@PathVariable int id) throws Exception {
+        Form form= shapeDao.findById(id);
+        shapeDao.deleteById(form);
+        return ResponseEntity.noContent().build();
+    }
 }
+
