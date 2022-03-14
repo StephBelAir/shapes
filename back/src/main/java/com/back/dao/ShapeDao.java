@@ -1,6 +1,7 @@
 package com.back.dao;
 
 import com.back.model.Form;
+import com.back.model.ShapeList;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 

@@ -1,9 +1,6 @@
 package com.back.dao;
 
-import com.back.model.Circle;
-import com.back.model.Form;
-import com.back.model.Rectangle;
-import com.back.model.Triangle;
+import com.back.model.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -12,6 +9,7 @@ import java.util.List;
 @Repository
 public class ShapeDaoImpl implements ShapeDao{
     public static List<Form> forms = new ArrayList<>();
+    public static List<ShapeList> shapesListe = new ArrayList<>();
 
     static {
 
@@ -46,4 +44,5 @@ public class ShapeDaoImpl implements ShapeDao{
     public void deleteById(int id) throws Exception{
         forms.remove(id);
     }
+
 }

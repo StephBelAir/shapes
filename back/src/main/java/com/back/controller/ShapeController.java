@@ -1,6 +1,7 @@
 package com.back.controller;
 
 import com.back.model.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import com.back.dao.ShapeDao;
 
@@ -55,5 +56,16 @@ public class ShapeController {
         shapeDao.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping(value = "/FomsTotals")
+    public ResponseEntity<ShapeList> addAllShapes() throws Exception{
+        Iterable<Form> forms = shapeDao.findAll();
+                ShapeList shapeList = new ShapeList();
+                for (Form form : forms){
+                    shapeList.addShapes(form);
+                }
+                return new ResponseEntity<ShapeList>(shapeList, HttpStatus.OK);
+    }
+
 }
 
