@@ -9,6 +9,6 @@ public interface ShapeDao {
     List<Form> findAll();
     Form findById(int id);
     Form save(Form form);
-    void deleteById(Form form) throws Exception; //??
+    void deleteById(int id) throws Exception; //??
 
 }

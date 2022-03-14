@@ -52,7 +52,7 @@ public class ShapeController {
     @DeleteMapping("/Forms/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) throws Exception {
         Form form= shapeDao.findById(id);
-        shapeDao.deleteById(form);
+        shapeDao.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 }
