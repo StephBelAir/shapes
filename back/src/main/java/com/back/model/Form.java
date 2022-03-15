@@ -3,8 +3,11 @@ package com.back.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class Form{
     @Id @GeneratedValue
     protected int id;

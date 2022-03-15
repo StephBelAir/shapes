@@ -1,8 +1,13 @@
 package com.back.model;
 
 
-/*--==================== Attributs Classe Rectangle  ====================--*/
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
+/*--==================== Attributs Classe Rectangle  ====================--*/
+@Entity
+@Inheritance(strategy= InheritanceType.JOINED)
 public class Rectangle extends Form {
 
     private double width = 0;

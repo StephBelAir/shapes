@@ -1,7 +1,12 @@
 package com.back.model;
 
-/*--==================== Attributs Classe Circle  ====================--*/
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
+/*--==================== Attributs Classe Circle  ====================--*/
+@Entity
+@Inheritance(strategy= InheritanceType.JOINED)
 public class Circle extends Form {
 
     private double radius = 0;

@@ -1,8 +1,13 @@
 package com.back.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+
 // Triangles Equilatéraux Uniquement
 /*--==================== Attributs Classe Triangle  ====================--*/
-
+@Entity
+@Inheritance(strategy= InheritanceType.JOINED)
 public class Triangle extends Form {
 
     private double base = 0;
