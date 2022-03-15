@@ -1,12 +1,17 @@
 package com.back.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public abstract class Form{
+    @Id @GeneratedValue
     protected int id;
     protected String type;
 
 
     /*--====================  Constructor   ====================--*/
-
 
     public Form(){}
     public Form ( int id){

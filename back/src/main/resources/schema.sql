@@ -1,0 +1,5 @@
+CREATE TABLE Form
+
+(
+    id        INT PRIMARY KEY AUTO_INCREMENT
+);

@@ -22,6 +22,8 @@ public class ShapeController {
         this.shapeDao = shapeDao;
     }
 
+    /*
+
     @GetMapping(value = "/Forms")
     public List<Form> listeShapes(){
        return shapeDao.findAll();
@@ -56,7 +58,7 @@ public class ShapeController {
         shapeDao.deleteById(id);
         return ResponseEntity.noContent().build();
     }
-
+*/
   /*   @GetMapping(value = "/")
     public ResponseEntity<ShapeList> totalShapes() throws Exception{
         Iterable<Form> forms = shapeDao.findAll();
