@@ -57,15 +57,15 @@ public class ShapeController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping(value = "/FomsTotals")
-    public ResponseEntity<ShapeList> addAllShapes() throws Exception{
+  /*   @GetMapping(value = "/")
+    public ResponseEntity<ShapeList> totalShapes() throws Exception{
         Iterable<Form> forms = shapeDao.findAll();
-                ShapeList shapeList = new ShapeList();
-                for (Form form : forms){
-                    shapeList.addShapes(form);
-                }
-                return new ResponseEntity<ShapeList>(shapeList, HttpStatus.OK);
-    }
+            ShapeList shapeList = new ShapeList();
+            for (Form form : forms){
+                shapeList.addShapes(form);
+            }
+            return new ResponseEntity<ShapeList>(shapeList, HttpStatus.OK);
+    } */
 
 }
 
