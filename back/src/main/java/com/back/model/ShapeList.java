@@ -3,7 +3,14 @@ import java.util.ArrayList;
 
 public class ShapeList {
 
+    /*--==================== Attributs  ====================--*/
+
+
     private ArrayList<Form> totalShapes = new ArrayList<>();
+
+
+
+    /*--==================== Getter & Setter  ====================--*/
 
     public void addShapes (Form form) {
         this.totalShapes.add(form);
@@ -12,9 +19,14 @@ public class ShapeList {
         return totalShapes;
     }
 
+    /*--==================== Constructor ====================--*/
+
+   // public ShapeList(){ this.totalShapes = "Total"; }
 
 
 
+
+    /*--==================== Méthodes  ====================--*/
 
     public double TotalSurface() {
         double TotalSurface = 0;
