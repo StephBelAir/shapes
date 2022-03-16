@@ -24,6 +24,9 @@ public class ShapeController {
         this.shapeDao = shapeDao;
     }
 
+    /*--====================  Add forms   ====================--*/
+
+
     @GetMapping(value = "/Forms/addForTests")
     public List<Form> addForms(){
         shapeDao.save(new Triangle(5));
@@ -32,6 +35,9 @@ public class ShapeController {
 
         return shapeDao.findAll();
     }
+
+    /*--====================  Get   ====================--*/
+
 
     @GetMapping(value = "/Forms")
     public List<Form> listeShapes(){
@@ -45,29 +51,28 @@ public class ShapeController {
     }
 
 
-   @PostMapping(value = "/Forms")
-    public ResponseEntity<Form> ajouterForme(@RequestBody FormDTO infoEnvoyeParLeUserQuiEstUnFormDTO){
-        Form formAdded = infoEnvoyeParLeUserQuiEstUnFormDTO.createShape();
-       shapeDao.save(formAdded);
-       if (Objects.isNull(formAdded)){
-            return ResponseEntity.noContent().build();
-        }
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(formAdded.getId())
-                .toUri();
-        return ResponseEntity.created(location).build();
-    }
+    /*--====================  Post   ====================--*/
 
-/*
-    @DeleteMapping("/Forms/{id}")
+    @PostMapping("/Forms/add")
+    public Form addShape(@RequestBody FormDTO infoEnvoyeParLeUserQuiEstUnFormDTO) {
+        Form form = infoEnvoyeParLeUserQuiEstUnFormDTO.createShape();
+        return this.shapeDao.save(form);
+    }
+    
+
+    /*--====================  Delete  ====================--*/
+
+
+  /*  @DeleteMapping("/Forms/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) throws Exception {
         Form form= shapeDao.findById(id);
         shapeDao.deleteById(id);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build(); */
     }
-*/
+
+    /*--====================  Update  ====================--*/
+
+
   /*   @GetMapping(value = "/")
     public ResponseEntity<ShapeList> totalShapes() throws Exception{
         Iterable<Form> forms = shapeDao.findAll();
@@ -78,5 +83,5 @@ public class ShapeController {
             return new ResponseEntity<ShapeList>(shapeList, HttpStatus.OK);
     } */
 
-}
+
 
