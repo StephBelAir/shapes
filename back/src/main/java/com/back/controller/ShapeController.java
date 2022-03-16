@@ -1,6 +1,7 @@
 package com.back.controller;
 
 import com.back.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import com.back.dao.ShapeDao;
@@ -16,13 +17,21 @@ import java.util.Objects;
 @RestController
 public class ShapeController {
 
+    @Autowired
     private final ShapeDao shapeDao;
 
     public ShapeController(ShapeDao shapeDao){
         this.shapeDao = shapeDao;
     }
 
-    /*
+    @GetMapping(value = "/Forms/addForTests")
+    public List<Form> addForms(){
+        shapeDao.save(new Triangle(5));
+        shapeDao.save(new Circle(10));
+        shapeDao.save(new Rectangle(4, 10));
+
+        return shapeDao.findAll();
+    }
 
     @GetMapping(value = "/Forms")
     public List<Form> listeShapes(){
@@ -51,7 +60,7 @@ public class ShapeController {
         return ResponseEntity.created(location).build();
     }
 
-
+/*
     @DeleteMapping("/Forms/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) throws Exception {
         Form form= shapeDao.findById(id);

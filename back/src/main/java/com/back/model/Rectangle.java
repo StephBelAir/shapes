@@ -4,13 +4,19 @@ package com.back.model;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.persistence.Column;
+
+
 
 /*--==================== Attributs Classe Rectangle  ====================--*/
 @Entity
-@Inheritance(strategy= InheritanceType.JOINED)
+@Table(name = "Rectangle")
 public class Rectangle extends Form {
 
+    @Column(name = "width")
     private double width = 0;
+    @Column(name = "height")
     private double height = 0;
 
 
@@ -20,8 +26,7 @@ public class Rectangle extends Form {
         this.type = "rectangle";
     }
 
-    public Rectangle(int id, double width, double height){
-        super(id);
+    public Rectangle(double width, double height){
         this.type = "rectangle";
         this.width = width;
         this.height = height;

@@ -3,12 +3,17 @@ package com.back.model;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.persistence.Column;
+
+
 
 /*--==================== Attributs Classe Circle  ====================--*/
 @Entity
-@Inheritance(strategy= InheritanceType.JOINED)
+@Table(name = "Circle")
 public class Circle extends Form {
 
+    @Column(name = "radius")
     private double radius = 0;
 
 
@@ -18,8 +23,7 @@ public class Circle extends Form {
         this.type = "circle";
     }
 
-    public Circle(int id, double radius){
-        super(id);
+    public Circle(double radius){
         this.type = "circle";
         this.radius = radius;
     }
