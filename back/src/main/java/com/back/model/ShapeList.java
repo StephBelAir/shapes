@@ -1,6 +1,9 @@
 package com.back.model;
 import java.util.ArrayList;
 
+/** @ManyToMany(targetEntity = Shape.class, fetch = FetchType.EAGER)
+private List<Shape>shape_list; ?? */
+
 public class ShapeList {
 
     /*--==================== Attributs  ====================--*/

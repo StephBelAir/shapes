@@ -14,6 +14,4 @@ public interface ShapeDao extends JpaRepository<Form, Integer> {
     List<Form> findAll();
     Form findById(int id);
     Form save(Form form);
-    void deleteById(int id) throws Exception; //??
-
 }
