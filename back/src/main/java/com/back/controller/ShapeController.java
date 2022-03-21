@@ -27,6 +27,7 @@ public class ShapeController {
         shapeDao.save(new Triangle(5));
         shapeDao.save(new Circle(10));
         shapeDao.save(new Rectangle(4, 10));
+        shapeDao.save(new Rectangle(6, 9));
 
         return shapeDao.findAll();
     }

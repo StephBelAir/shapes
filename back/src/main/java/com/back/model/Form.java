@@ -1,12 +1,6 @@
 package com.back.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
-import javax.persistence.Column;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Form")
@@ -17,6 +11,29 @@ public abstract class Form{
     protected int id;
     @Column(name = "type")
     protected String type;
+
+    @ManyToOne (
+            cascade = CascadeType.ALL,
+            targetEntity = ShapeList.class,
+            fetch = FetchType.LAZY
+ )
+    @JoinColumn( name = "shapes_list_id")
+
+
+/**    @JoinTable(name = "form_id_shapes_list_id",
+            joinColumns = @JoinColumn( name = "id"),
+            inverseJoinColumns = @JoinColumn ( name = "shapes_list_id")
+    )*/
+
+    private ShapeList shapeList;
+
+    public ShapeList getShapeList() {
+        return shapeList;
+    }
+
+    public void setShapeList(ShapeList shapeList) {
+        this.shapeList = shapeList;
+    }
 
 
     /*--====================  Constructor   ====================--*/
