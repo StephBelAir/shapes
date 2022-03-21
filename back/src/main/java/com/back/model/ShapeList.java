@@ -37,6 +37,7 @@ public class ShapeList{
 
     /*--==================== Constructor ====================--*/
 
+    public ShapeList(){}
     public ShapeList(List<Form> shape_list){ this.totalShapes = new ArrayList<>(); }
 
 
