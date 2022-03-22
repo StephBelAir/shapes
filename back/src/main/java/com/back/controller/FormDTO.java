@@ -1,9 +1,6 @@
 package com.back.controller;
 
-import com.back.model.Circle;
-import com.back.model.Form;
-import com.back.model.Rectangle;
-import com.back.model.Triangle;
+import com.back.model.*;
 
 public class FormDTO {
 
@@ -25,6 +22,12 @@ public class FormDTO {
                 break;
         }
         return f;
+    }
+
+    public static ShapeList fromListDTOtoList(){
+           ShapeList shapeList = new ShapeList();
+           return shapeList;
+
     }
 
 }

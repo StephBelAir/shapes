@@ -31,9 +31,21 @@ public class ShapesListController {
         this.shapeDao = shapeDao;
     }
 
+    /*--==================== Get  ====================--*/
+    //All
+
     @GetMapping
     @ResponseBody
-    public List<Form> getShapeList(){
-        return shapeDao.findAll();
+    public List<ShapeList> getShapeList(){
+        return shapesListDAO.findAll();
     }
+
+    /*--==================== Add  ====================--*/
+    //1 List
+    @PostMapping("addList")
+    public ShapeList addShapesList(){
+        ShapeList shape_list = FormDTO.fromListDTOtoList();
+        return this.shapesListDAO.save(shape_list);
+    }
+
 }

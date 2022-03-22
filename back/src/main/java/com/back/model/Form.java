@@ -19,10 +19,6 @@ public abstract class Form{
     @JoinColumn( name = "shapes_list_id")
     protected ShapeList shapeList;
 
-/**    @JoinTable(name = "form_id_shapes_list_id",
-            joinColumns = @JoinColumn( name = "id"),
-            inverseJoinColumns = @JoinColumn ( name = "shapes_list_id")
-    )*/
 
 
 

@@ -31,7 +31,7 @@ public class ShapeList{
     /*--==================== Getter & Setter  ====================--*/
 
 
-    public void addShapes (Form form) {
+    public void addShapesList (Form form) {
         this.shape_list.add(form);
     }
     public List<Form> getNewShapes() {
@@ -40,13 +40,15 @@ public class ShapeList{
 
     /*--==================== Constructor ====================--*/
 
+    public ShapeList(){}
+
     public ShapeList(List<Form> shape_list) {
     }
 
 
     /*--==================== Méthodes  ====================--*/
 
-    public double TotalSurface() {
+    public double getTotalSurface() {
         double TotalSurface = 0;
         for (Form form: shape_list) {
             TotalSurface += form.getSurface();
@@ -54,7 +56,7 @@ public class ShapeList{
         return TotalSurface;
     }
 
-    public double TotalPerimetre() {
+    public double getTotalPerimetre() {
         double TotalPerimetre = 0;
         for (Form form: shape_list) {
             TotalPerimetre += form.getPerimetre();

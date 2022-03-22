@@ -26,6 +26,8 @@ public class BackApplication { private static final Logger LOGGER = LoggerFactor
 		SpringApplication.run(BackApplication.class, args);
 	}
 
+	/*--====================  Add default data at app init   ====================--*/
+
 	@Bean
 	public CommandLineRunner commandLineRunner(ShapeDao shapeDao) {
 

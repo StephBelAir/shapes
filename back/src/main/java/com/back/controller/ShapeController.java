@@ -19,9 +19,10 @@ public class ShapeController {
         this.shapeDao = shapeDao;
     }
 
-    /*--====================  Add forms   ====================--*/
 
+    /*--====================  Add forms For Test  ====================--*/
 
+    /**
     @GetMapping(value = "/Forms/addForTests")
     public List<Form> addForms() {
         shapeDao.save(new Triangle(5));
@@ -30,7 +31,7 @@ public class ShapeController {
         shapeDao.save(new Rectangle(6, 9));
 
         return shapeDao.findAll();
-    }
+    }*/
 
     /*--====================  Get   ====================--*/
 
