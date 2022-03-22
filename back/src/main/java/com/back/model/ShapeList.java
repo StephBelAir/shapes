@@ -14,14 +14,17 @@ public class ShapeList{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JoinColumn(name = "shapes_list_id")
-    private int shapes_list_id;
+    protected int shapes_list_id;
 
     @OneToMany ( cascade = CascadeType.ALL,
             orphanRemoval = true
     )
 
+    private List<Form> shape_list = new ArrayList<>();
 
-    private List<Form> totalShapes = new ArrayList<>();
+
+
+
 
 
 
@@ -29,26 +32,23 @@ public class ShapeList{
 
 
     public void addShapes (Form form) {
-        this.totalShapes.add(form);
+        this.shape_list.add(form);
     }
     public List<Form> getNewShapes() {
-        return totalShapes;
+        return shape_list;
     }
 
     /*--==================== Constructor ====================--*/
 
-    /**  private final List<Form> shapesList;
-
-   public ShapeList() {
-        this.shapesList = new ArrayList<>();
-    } */
+    public ShapeList(List<Form> shape_list) {
+    }
 
 
     /*--==================== Méthodes  ====================--*/
 
     public double TotalSurface() {
         double TotalSurface = 0;
-        for (Form form: totalShapes) {
+        for (Form form: shape_list) {
             TotalSurface += form.getSurface();
         }
         return TotalSurface;
@@ -56,7 +56,7 @@ public class ShapeList{
 
     public double TotalPerimetre() {
         double TotalPerimetre = 0;
-        for (Form form: totalShapes) {
+        for (Form form: shape_list) {
             TotalPerimetre += form.getPerimetre();
         }
         return TotalPerimetre;

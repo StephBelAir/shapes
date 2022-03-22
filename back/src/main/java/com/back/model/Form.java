@@ -12,28 +12,19 @@ public abstract class Form{
     @Column(name = "type")
     protected String type;
 
-    @ManyToOne (
+    @ManyToOne (targetEntity = ShapeList.class,
             cascade = CascadeType.ALL,
-            targetEntity = ShapeList.class,
             fetch = FetchType.LAZY
  )
     @JoinColumn( name = "shapes_list_id")
-
+    protected ShapeList shapeList;
 
 /**    @JoinTable(name = "form_id_shapes_list_id",
             joinColumns = @JoinColumn( name = "id"),
             inverseJoinColumns = @JoinColumn ( name = "shapes_list_id")
     )*/
 
-    private ShapeList shapeList;
 
-    public ShapeList getShapeList() {
-        return shapeList;
-    }
-
-    public void setShapeList(ShapeList shapeList) {
-        this.shapeList = shapeList;
-    }
 
 
     /*--====================  Constructor   ====================--*/
