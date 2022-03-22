@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 
 @Entity
-@Table(name = "shapes_list", uniqueConstraints = { @UniqueConstraint(columnNames = { "shapes_list_id" }) })
+@Table(name = "shapes_list") // , uniqueConstraints = { @UniqueConstraint(columnNames = { "shapes_list" }) }
 public class ShapeList{
 
     /*--==================== Attributs  ====================--*/
@@ -37,8 +37,11 @@ public class ShapeList{
 
     /*--==================== Constructor ====================--*/
 
-    public ShapeList(){}
-    public ShapeList(List<Form> shape_list){ this.totalShapes = new ArrayList<>(); }
+    /**  private final List<Form> shapesList;
+
+   public ShapeList() {
+        this.shapesList = new ArrayList<>();
+    } */
 
 
     /*--==================== Méthodes  ====================--*/

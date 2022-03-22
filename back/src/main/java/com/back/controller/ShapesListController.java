@@ -13,14 +13,16 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Forms/List")
-@CrossOrigin(origins = "*")
+
 public class ShapesListController {
+
+
     @Autowired
     private ShapesListDAO shapesListDAO;
 
     @Autowired
     private ShapeDao shapeDao;
-    private List<Form>shape_list = new ArrayList<>();
+    private List<Form>shape_list =new ArrayList<>();
     private ShapeList shapeList = new ShapeList(shape_list);
 
     public ShapesListController(ShapeDao shapeDao, ShapesListDAO shapesListDAO){
@@ -28,13 +30,10 @@ public class ShapesListController {
         this.shapesListDAO = shapesListDAO;
         this.shapeDao = shapeDao;
     }
-/**
+
+    @GetMapping
     @ResponseBody
-    @GetMapping(value = "/Forms/List")
-    public List<Form> shape_list() {
-        return shape_list.findAll();
-    } */
-
-
-
+    public List<Form> getShapeList(){
+        return shapeDao.findAll();
+    }
 }
