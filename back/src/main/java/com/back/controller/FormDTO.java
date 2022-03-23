@@ -24,6 +24,9 @@ public class FormDTO {
         return f;
     }
 
+    /*--====================  Shapeliste  ====================--*/
+
+
     public static ShapeList fromListDTOtoList(){
            ShapeList shapeList = new ShapeList();
            return shapeList;

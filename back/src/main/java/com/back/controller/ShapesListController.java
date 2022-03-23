@@ -40,6 +40,14 @@ public class ShapesListController {
         return shapesListDAO.findAll();
     }
 
+    // 1 list by id
+    @GetMapping("/{listId}")
+    @ResponseBody
+    public ShapeList getListById(@PathVariable int listId){
+        return shapesListDAO.findById(listId);
+    }
+
+
     /*--==================== Add  ====================--*/
     //1 List
     @PostMapping("addList")
@@ -48,4 +56,16 @@ public class ShapesListController {
         return this.shapesListDAO.save(shape_list);
     }
 
+    // All shapes to 1 list
+    @PostMapping
+
+    // 1 shape in 1 shapelist
+  /**  @PostMapping("/{listId}/{shapeId}")
+    @ResponseBody
+    public void addShapeToList(@PathVariable int listId, @PathVariable int shapeId){
+        Form form = shapeDao.findById(shapeId);
+        shapeList = getListById(listId);
+        shapeList.addShapeIntoList(form);
+        shapesListDAO.save(shapeList);
+    } */
 }
