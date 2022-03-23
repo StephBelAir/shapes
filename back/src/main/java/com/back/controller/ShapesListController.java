@@ -6,6 +6,7 @@ import com.back.dao.ShapesListDAO;
 import com.back.model.Form;
 import com.back.model.ShapeList;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -57,15 +58,34 @@ public class ShapesListController {
     }
 
     // All shapes to 1 list
-    @PostMapping
+    @PostMapping("/{listId}")
+    @ResponseBody
+    public void addAllShapesToList(@PathVariable int listId){
+        shape_list = shapeDao.findAll();
+        shapeList = getListById(listId);
+        for (Form form: shape_list){
+            shapeList.addShapeIntoList(form);
+        }
+        shapesListDAO.save(shapeList);
+    }
 
     // 1 shape in 1 shapelist
-  /**  @PostMapping("/{listId}/{shapeId}")
+    @PostMapping("/{listId}/{shapeId}")
     @ResponseBody
     public void addShapeToList(@PathVariable int listId, @PathVariable int shapeId){
         Form form = shapeDao.findById(shapeId);
         shapeList = getListById(listId);
         shapeList.addShapeIntoList(form);
         shapesListDAO.save(shapeList);
-    } */
+    }
+
+    /*--==================== Delete  ====================--*/
+    //1 List by Id
+    @DeleteMapping("/{listId}")
+    @ResponseBody
+    public ResponseEntity<Void>
+
+
+
+
 }

@@ -23,11 +23,6 @@ public class ShapeList{
     private List<Form> shape_list = new ArrayList<>();
 
 
-
-
-
-
-
     /*--==================== Getter & Setter  ====================--*/
 
 
@@ -37,6 +32,7 @@ public class ShapeList{
     public List<Form> getNewShapes() {
         return shape_list;
     }
+
 
     /*--==================== Constructor ====================--*/
 
@@ -63,4 +59,9 @@ public class ShapeList{
         }
         return TotalPerimetre;
     }
+
+    public void addShapeIntoList(Form form){
+        shape_list.add(form);
+    }
+
 }
