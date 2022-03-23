@@ -83,9 +83,28 @@ public class ShapesListController {
     //1 List by Id
     @DeleteMapping("/{listId}")
     @ResponseBody
-    public ResponseEntity<Void>
+    public ResponseEntity<Void> deleteShape(@PathVariable int listId) throws Exception{
+        shapesListDAO.deleteById(listId);
+        return ResponseEntity.noContent().build();
+    }
 
+    //All Lists
+    @DeleteMapping
+    @ResponseBody
+    public ResponseEntity<Void>deleteAllShape()throws Exception{
+        shapesListDAO.deleteAll();
+        return ResponseEntity.noContent().build();
+    }
 
+    //1 shape in 1 List
+    @DeleteMapping("/{listId}/{shapeId}")
+    @ResponseBody
+    public void deleteOneShapeToSheet(@PathVariable int listId, @PathVariable int shapeId){
+        Form form = shapeDao.findById(shapeId);
+        shapeList = getListById(listId);
+        shapeList.deleteShapeFromList(form);
+        shapesListDAO.save(shapeList);
+    }
 
 
 }

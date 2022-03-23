@@ -253,6 +253,75 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Delete 1 list by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/Forms/List/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"Forms",
+								"List",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Lists",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/Forms/List",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"Forms",
+								"List"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete 1 shape in 1list",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/Forms/List/2/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"Forms",
+								"List",
+								"2",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}

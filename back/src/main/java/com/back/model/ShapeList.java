@@ -64,4 +64,8 @@ public class ShapeList{
         shape_list.add(form);
     }
 
+    public void deleteShapeFromList(Form form){
+        shape_list.remove(form);
+    }
+
 }
