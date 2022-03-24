@@ -1,5 +1,7 @@
 package com.back.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,7 +18,9 @@ public abstract class Form{
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
  )
+
     @JoinColumn( name = "shapes_list_id")
+    @JsonBackReference
     protected ShapeList shapeList;
 
 
@@ -46,4 +50,13 @@ public abstract class Form{
     public abstract double getPerimetre();
 
     public abstract double getSurface();
+
+    public ShapeList getShapeList() {
+        return shapeList;
+    }
+
+    public void setShapeList(ShapeList shapeList) {
+        this.shapeList = shapeList;
+    }
+
 }

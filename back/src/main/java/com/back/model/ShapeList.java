@@ -1,4 +1,7 @@
 package com.back.model;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 import java.util.ArrayList;
@@ -20,6 +23,7 @@ public class ShapeList{
             orphanRemoval = true
     )
 
+    @JsonManagedReference
     private List<Form> shape_list = new ArrayList<>();
 
 
@@ -32,6 +36,7 @@ public class ShapeList{
     public List<Form> getNewShapes() {
         return shape_list;
     }
+
 
 
     /*--==================== Constructor ====================--*/

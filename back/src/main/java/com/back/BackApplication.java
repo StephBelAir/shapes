@@ -1,9 +1,8 @@
 package com.back;
 
 import com.back.dao.ShapeDao;
-import com.back.model.Circle;
-import com.back.model.Rectangle;
-import com.back.model.Triangle;
+import com.back.dao.ShapesListDAO;
+import com.back.model.*;
 
 import java.lang.invoke.MethodHandles;
 
@@ -29,15 +28,20 @@ public class BackApplication { private static final Logger LOGGER = LoggerFactor
 	/*--====================  Add default data at app init   ====================--*/
 
 	@Bean
-	public CommandLineRunner commandLineRunner(ShapeDao shapeDao) {
+	public CommandLineRunner commandLineRunner(ShapeDao shapeDao, ShapesListDAO shapesListDAO) {
 
 		return args -> {
-			shapeDao.save(new Triangle(5));
-			shapeDao.save(new Circle(10));
-			shapeDao.save(new Rectangle(4, 10));
-			shapeDao.save(new Rectangle(6, 9));
 
-			LOGGER.info("Application started with Default Data ");
+			  			ShapeList list = new ShapeList();
+			  			Form created;
+			  			for (int i = 0; i < 2; i++) {
+			  				created = new Triangle(i%17);
+							created.setShapeList(list);
+			  				list.addShapeIntoList(created);
+			             }
+			 				shapesListDAO.save(list);
+
+						LOGGER.info("*** Application started with Default Data ***");
 
 		};
 	}
