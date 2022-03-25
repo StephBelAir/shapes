@@ -5,7 +5,6 @@ import com.back.dao.ShapesListDAO;
 import com.back.model.*;
 
 import java.lang.invoke.MethodHandles;
-import java.util.Random;
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 
@@ -36,9 +35,9 @@ public class BackApplication {
 		return args -> {
 
 			Form created;
-			for (int j = 0; j < 10; j++) {
+			for (int j = 0; j < 3; j++) {
 				ShapeList list = new ShapeList();
-				for (int i = 0; i < 2; i++) {
+				for (int i = 0; i < 3; i++) {
 					created = new Triangle(i%17);
 					created = shapeDao.save(created);
 					list.addShape(created);

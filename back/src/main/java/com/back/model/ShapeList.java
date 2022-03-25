@@ -15,13 +15,11 @@ public class ShapeList{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-   // @JoinColumn(name = "shapes_list_id")
-   // protected int shapes_list_id;
+
 
 
     @OneToMany(cascade = {CascadeType.REMOVE})
-    private List<Form> shapes = new ArrayList<>();// = new ArrayList<>();  private shape_list
-
+    private List<Form> shapes = new ArrayList<>();
 
     /*--==================== Getter & Setter  ====================--*/
 
@@ -35,9 +33,6 @@ public class ShapeList{
 
     /*--==================== Constructor ====================--*/
 
-   // public ShapeList(){}
-
-   // public ShapeList(List<Form> shape_list) {    }
 
     public ShapeList () {}
 
