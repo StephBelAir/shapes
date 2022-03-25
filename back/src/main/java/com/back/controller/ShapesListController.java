@@ -72,7 +72,7 @@ public class ShapesListController {
         shapesListDAO.save(shapeList);
     }
 
-    //1 ShapeList in 1 List ?? work ??
+    //1 ShapeList in 1 List ?? work ?? not with Postman
 
     @PostMapping("/{listId}/addList")
     @ResponseBody
