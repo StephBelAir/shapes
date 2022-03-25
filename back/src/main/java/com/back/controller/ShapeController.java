@@ -23,7 +23,7 @@ public class ShapeController {
     /*--====================  Add forms For Test  ====================--*/
 
     /**
-    @GetMapping(value = "/Forms/addForTests")
+    //@GetMapping(value = "/Forms/addForTests")
     public List<Form> addForms() {
         shapeDao.save(new Triangle(5));
         shapeDao.save(new Circle(10));

@@ -1,6 +1,6 @@
 package com.back.controller;
 
-
+import com.back.controller.FormDTO;
 import com.back.dao.ShapeDao;
 import com.back.dao.ShapesListDAO;
 import com.back.model.Form;
@@ -23,8 +23,8 @@ public class ShapesListController {
 
     @Autowired
     private ShapeDao shapeDao;
-    private List<Form>shape_list =new ArrayList<>();
-    private ShapeList shapeList; //= new ShapeList(shape_list);
+    private List<Form> shapes = new ArrayList<>();
+
 
     public ShapesListController(ShapeDao shapeDao, ShapesListDAO shapesListDAO){
         super();
@@ -51,31 +51,59 @@ public class ShapesListController {
 
     /*--==================== Add  ====================--*/
     //1 List
-    @PostMapping("addList")
+    @PostMapping("/addList")
     public ShapeList addShapesList(){
         ShapeList shape_list = FormDTO.fromListDTOtoList();
         return this.shapesListDAO.save(shape_list);
     }
 
     // All shapes to 1 list
-    @PostMapping("/{listId}")
+  /*  @PostMapping("/List/{listId}")
     @ResponseBody
     public void addAllShapesToList(@PathVariable int listId){
-        shape_list = shapeDao.findAll();
+        shapes = shapeDao.findAll();
         shapeList = getListById(listId);
-        for (Form form: shape_list){
-            shapeList.addShape(form);
+        for (Form form: shapes){
+            shapeList.addShapeIntoList(form);
         }
         shapesListDAO.save(shapeList);
-    }
+    }*/
 
     // 1 shape in 1 shapelist
-    @PostMapping("/{listId}/{shapeId}")
-    @ResponseBody
+ /*   //@PostMapping("/{listId}/{shapeId}")
+    //@ResponseBody
     public void addShapeToList(@PathVariable int listId, @PathVariable int shapeId){
         Form form = shapeDao.findById(shapeId);
         shapeList = getListById(listId);
         shapeList.addShape(form);
+        shapesListDAO.save(shapeList);
+    }*/
+
+    @PostMapping("/{listId}/add")
+    @ResponseBody
+    public void addShapeToList(@RequestBody FormDTO infoEnvoyeParLeUserQuiEstUnFormDTO, @PathVariable int listId){
+        Form form = infoEnvoyeParLeUserQuiEstUnFormDTO.createShape();
+
+        ShapeList shapeList = shapesListDAO.findById(listId);
+        if(shapeList ==null)
+            return;
+        form = shapeDao.save(form);
+        shapeList.addShape(form);
+        shapesListDAO.save(shapeList);
+    }
+
+    @PostMapping("/{listId}/add")
+    @ResponseBody
+    public void addShapeToList(@RequestBody List<FormDTO> infoEnvoyeParLeUserQuiEstUnFormDTO, @PathVariable int listId){
+        ShapeList shapeList = shapesListDAO.findById(listId);
+        if(shapeList ==null)
+            return;
+        for (FormDTO dto : infoEnvoyeParLeUserQuiEstUnFormDTO) {
+            Form form = dto.createShape();
+            form = shapeDao.save(form);
+            shapeList.addShape(form);
+        }
+
         shapesListDAO.save(shapeList);
     }
 
@@ -101,7 +129,7 @@ public class ShapesListController {
     @ResponseBody
     public void deleteOneShapeToSheet(@PathVariable int listId, @PathVariable int shapeId){
         Form form = shapeDao.findById(shapeId);
-        shapeList = getListById(listId);
+        ShapeList shapeList = getListById(listId);
         shapeList.deleteShapeFromList(form);
         shapesListDAO.save(shapeList);
     }

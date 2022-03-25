@@ -58,6 +58,9 @@ public class ShapeList{
         shapes.remove(form);
     }
 
+    public void addShapeIntoList(Form form){ shapes.add(form);}
+
+
     public int getId() {
         return id;
     }
