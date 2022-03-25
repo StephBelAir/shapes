@@ -57,27 +57,7 @@ public class ShapesListController {
         return this.shapesListDAO.save(shape_list);
     }
 
-    // All shapes to 1 list
-  /*  @PostMapping("/List/{listId}")
-    @ResponseBody
-    public void addAllShapesToList(@PathVariable int listId){
-        shapes = shapeDao.findAll();
-        shapeList = getListById(listId);
-        for (Form form: shapes){
-            shapeList.addShapeIntoList(form);
-        }
-        shapesListDAO.save(shapeList);
-    }*/
-
-    // 1 shape in 1 shapelist
- /*   //@PostMapping("/{listId}/{shapeId}")
-    //@ResponseBody
-    public void addShapeToList(@PathVariable int listId, @PathVariable int shapeId){
-        Form form = shapeDao.findById(shapeId);
-        shapeList = getListById(listId);
-        shapeList.addShape(form);
-        shapesListDAO.save(shapeList);
-    }*/
+    //1 Shape in 1 List
 
     @PostMapping("/{listId}/add")
     @ResponseBody
@@ -92,7 +72,9 @@ public class ShapesListController {
         shapesListDAO.save(shapeList);
     }
 
-    @PostMapping("/{listId}/add")
+    //1 ShapeList in 1 List ?? work ??
+
+    @PostMapping("/{listId}/addList")
     @ResponseBody
     public void addShapeToList(@RequestBody List<FormDTO> infoEnvoyeParLeUserQuiEstUnFormDTO, @PathVariable int listId){
         ShapeList shapeList = shapesListDAO.findById(listId);

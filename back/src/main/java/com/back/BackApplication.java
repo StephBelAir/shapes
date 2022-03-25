@@ -35,9 +35,9 @@ public class BackApplication {
 		return args -> {
 
 			Form created;
-			for (int j = 0; j < 30; j++) {
+			for (int j = 0; j < 5; j++) {
 				ShapeList list = new ShapeList();
-				for (int i = 0; i < 30; i++) {
+				for (int i = 0; i < 3; i++) {
 					created = new Triangle(i%17);
 					created = shapeDao.save(created);
 					list.addShape(created);
