@@ -200,7 +200,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\n        \"id\": 1,\n        \"type\": \"triangle\",\n        \"base\": 5.0,\n        \"perimetre\": 15.0,\n        \"surface\": 10.825317547305483\n    },\n    {\n        \"id\": 2,\n        \"type\": \"circle\",\n        \"radius\": 10.0,\n        \"perimetre\": 62.83185307179586,\n        \"surface\": 314.1592653589793\n    },\n    {\n        \"id\": 3,\n        \"type\": \"rectangle\",\n        \"width\": 4.0,\n        \"height\": 10.0,\n        \"perimetre\": 28.0,\n        \"surface\": 40.0\n    },\n    {\n        \"id\": 4,\n        \"type\": \"rectangle\",\n        \"width\": 6.0,\n        \"height\": 9.0,\n        \"perimetre\": 30.0,\n        \"surface\": 54.0\n    }",
+							"raw": "    {\n        \"id\": 1,\n        \"type\": \"triangle\",\n        \"base\": 5.0\n\n    },\n    {\n        \"id\": 2,\n        \"type\": \"circle\",\n        \"radius\": 10.0\n    },\n    {\n        \"id\": 3,\n        \"type\": \"rectangle\",\n        \"width\": 4.0,\n        \"height\": 10.0\n    },\n    {\n        \"id\": 4,\n        \"type\": \"rectangle\",\n        \"width\": 6.0,\n        \"height\": 9.0\n    },",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -208,7 +208,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/Forms/List/2",
+							"raw": "http://localhost:9090/Forms/List/4/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -217,7 +217,8 @@
 							"path": [
 								"Forms",
 								"List",
-								"2"
+								"4",
+								"add"
 							]
 						}
 					},
@@ -230,7 +231,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"type\": \"circle\",\n        \"length\": 69\n    }",
+							"raw": "{\n        \"type\": \"circle\",\n        \"length\": 10\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -238,7 +239,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/Forms/List/2/1",
+							"raw": "http://localhost:9090/Forms/List/4/add",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -247,8 +248,8 @@
 							"path": [
 								"Forms",
 								"List",
-								"2",
-								"1"
+								"4",
+								"add"
 							]
 						}
 					},
