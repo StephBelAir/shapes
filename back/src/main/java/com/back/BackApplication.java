@@ -5,6 +5,7 @@ import com.back.dao.ShapesListDAO;
 import com.back.model.*;
 
 import java.lang.invoke.MethodHandles;
+import java.util.Random;
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 
@@ -17,7 +18,9 @@ import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
-public class BackApplication { private static final Logger LOGGER = LoggerFactory.logger(MethodHandles.lookup().lookupClass());
+public class BackApplication {
+
+	private static final Logger LOGGER = LoggerFactory.logger(MethodHandles.lookup().lookupClass());
 
 
 	public static void main(String[] args) {
@@ -32,16 +35,20 @@ public class BackApplication { private static final Logger LOGGER = LoggerFactor
 
 		return args -> {
 
-			  			ShapeList list = new ShapeList();
-			  			Form created;
-			  			for (int i = 0; i < 2; i++) {
-			  				created = new Triangle(i%17);
-							created.setShapeList(list);
-			  				list.addShapeIntoList(created);
-			             }
-			 				shapesListDAO.save(list);
+			Form created;
+			for (int j = 0; j < 10; j++) {
+				ShapeList list = new ShapeList();
+				for (int i = 0; i < 2; i++) {
+					created = new Triangle(i%17);
+					created = shapeDao.save(created);
+					list.addShape(created);
+				}
+				shapesListDAO.save(list);
+			}
+
 
 						LOGGER.info("*** Application started with Default Data ***");
+			LOGGER.info(shapesListDAO.findAll());
 
 		};
 	}

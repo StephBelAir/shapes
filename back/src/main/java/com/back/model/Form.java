@@ -6,25 +6,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Form")
-@Inheritance(strategy=InheritanceType.JOINED)
+@Inheritance (strategy=InheritanceType.JOINED)
 public abstract class Form{
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     protected int id;
     @Column(name = "type")
     protected String type;
-
-    @ManyToOne (targetEntity = ShapeList.class,
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
- )
-
-    @JoinColumn( name = "shapes_list_id")
-    @JsonBackReference
-    protected ShapeList shapeList;
-
-
-
 
 
     /*--====================  Constructor   ====================--*/
@@ -50,13 +39,5 @@ public abstract class Form{
     public abstract double getPerimetre();
 
     public abstract double getSurface();
-
-    public ShapeList getShapeList() {
-        return shapeList;
-    }
-
-    public void setShapeList(ShapeList shapeList) {
-        this.shapeList = shapeList;
-    }
 
 }

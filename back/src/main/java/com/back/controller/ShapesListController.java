@@ -24,7 +24,7 @@ public class ShapesListController {
     @Autowired
     private ShapeDao shapeDao;
     private List<Form>shape_list =new ArrayList<>();
-    private ShapeList shapeList = new ShapeList(shape_list);
+    private ShapeList shapeList; //= new ShapeList(shape_list);
 
     public ShapesListController(ShapeDao shapeDao, ShapesListDAO shapesListDAO){
         super();
@@ -64,7 +64,7 @@ public class ShapesListController {
         shape_list = shapeDao.findAll();
         shapeList = getListById(listId);
         for (Form form: shape_list){
-            shapeList.addShapeIntoList(form);
+            shapeList.addShape(form);
         }
         shapesListDAO.save(shapeList);
     }
@@ -75,7 +75,7 @@ public class ShapesListController {
     public void addShapeToList(@PathVariable int listId, @PathVariable int shapeId){
         Form form = shapeDao.findById(shapeId);
         shapeList = getListById(listId);
-        shapeList.addShapeIntoList(form);
+        shapeList.addShape(form);
         shapesListDAO.save(shapeList);
     }
 

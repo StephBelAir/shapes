@@ -1,6 +1,5 @@
 package com.back.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.List;
@@ -9,49 +8,45 @@ import java.util.ArrayList;
 
 
 @Entity
-@Table(name = "shapes_list") // , uniqueConstraints = { @UniqueConstraint(columnNames = { "shapes_list" }) }
 public class ShapeList{
 
     /*--==================== Attributs  ====================--*/
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JoinColumn(name = "shapes_list_id")
-    protected int shapes_list_id;
+    private int id;
+   // @JoinColumn(name = "shapes_list_id")
+   // protected int shapes_list_id;
 
-    @OneToMany ( cascade = CascadeType.ALL,
-            orphanRemoval = true
-    )
 
-    @JsonManagedReference
-    private List<Form> shape_list = new ArrayList<>();
+    @OneToMany(cascade = {CascadeType.REMOVE})
+    private List<Form> shapes = new ArrayList<>();// = new ArrayList<>();  private shape_list
 
 
     /*--==================== Getter & Setter  ====================--*/
 
 
-    public void addShapesList (Form form) {
-        this.shape_list.add(form);
+    public void addShape(Form form) {
+        this.shapes.add(form);
     }
-    public List<Form> getNewShapes() {
-        return shape_list;
-    }
+
 
 
 
     /*--==================== Constructor ====================--*/
 
-    public ShapeList(){}
+   // public ShapeList(){}
 
-    public ShapeList(List<Form> shape_list) {
-    }
+   // public ShapeList(List<Form> shape_list) {    }
+
+    public ShapeList () {}
 
 
     /*--==================== Méthodes  ====================--*/
 
     public double getTotalSurface() {
         double TotalSurface = 0;
-        for (Form form: shape_list) {
+        for (Form form: shapes) {
             TotalSurface += form.getSurface();
         }
         return TotalSurface;
@@ -59,18 +54,28 @@ public class ShapeList{
 
     public double getTotalPerimetre() {
         double TotalPerimetre = 0;
-        for (Form form: shape_list) {
+        for (Form form: shapes) {
             TotalPerimetre += form.getPerimetre();
         }
         return TotalPerimetre;
     }
-
-    public void addShapeIntoList(Form form){
-        shape_list.add(form);
-    }
-
     public void deleteShapeFromList(Form form){
-        shape_list.remove(form);
+        shapes.remove(form);
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Form> getShapes() {
+        return shapes;
+    }
+
+    public void setShapes(List<Form> shape_list) {
+        this.shapes = shape_list;
+    }
 }
