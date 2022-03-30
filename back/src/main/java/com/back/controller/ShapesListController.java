@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/Forms/List")
 
 public class ShapesListController {
@@ -61,8 +62,8 @@ public class ShapesListController {
 
     @PostMapping("/{listId}/add")
     @ResponseBody
-    public void addShapeToList(@RequestBody FormDTO infoEnvoyeParLeUserQuiEstUnFormDTO, @PathVariable int listId){
-        Form form = infoEnvoyeParLeUserQuiEstUnFormDTO.createShape();
+    public void addShapeToList(@RequestBody FormDTO fromListDTOtoList, @PathVariable int listId){
+        Form form = fromListDTOtoList.createShape();
 
         ShapeList shapeList = shapesListDAO.findById(listId);
         if(shapeList ==null)
@@ -72,9 +73,9 @@ public class ShapesListController {
         shapesListDAO.save(shapeList);
     }
 
-    //1 ShapeList in 1 List ?? work ?? not with Postman
+    //1 ShapeList in 1 List
 
-    @PostMapping("/{listId}/addList")
+    @PostMapping("/{listId}/addShapeList")
     @ResponseBody
     public void addShapeToList(@RequestBody List<FormDTO> infoEnvoyeParLeUserQuiEstUnFormDTO, @PathVariable int listId){
         ShapeList shapeList = shapesListDAO.findById(listId);
