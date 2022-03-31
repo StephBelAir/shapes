@@ -1,0 +1,10 @@
+<div *ngIf="shape">
+
+  <h2>{{shape.type | uppercase}} Details</h2>
+  <div><span>id: </span>{{shape.id}}</div>
+  <div>
+      <label for="shape-type">Shape type: </label>
+      <input id="shape-type" [(ngModel)]="shape.type" placeholder="type">
+    </div>
+    <button type="button" (click)="goBack()">go back</button>
+  </div>

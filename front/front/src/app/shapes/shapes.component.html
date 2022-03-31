@@ -1,0 +1,11 @@
+<h2 class="text-3xl mb-10">My Shapes</h2>
+
+<ul class="shapes">
+  <li class="cursor-pointer" *ngFor="let shape of shapes">
+    <a routerLink="/detail/{{shape.id}}">
+      <span class="badge">{{shape.id}}</span> {{shape.type}}
+    </a>
+  </li>
+</ul>
+
+<app-shape-detail [shape]="selectedShape"></app-shape-detail>
