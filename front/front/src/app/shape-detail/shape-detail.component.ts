@@ -3,7 +3,7 @@ import { ActivatedRoute} from "@angular/router";
 import { Location } from "@angular/common";
 import { ShapeService} from "../services/shape.service";
 
-import { Shape } from "../Shape";
+import { IShape } from "../models/iShape";
 
 @Component({
   selector: 'app-shape-detail',
@@ -11,7 +11,7 @@ import { Shape } from "../Shape";
   styleUrls: ['./shape-detail.component.css']
 })
 export class ShapeDetailComponent implements OnInit {
-  @Input() shape?: Shape;
+  @Input() shape?: IShape;
 
 
   constructor(

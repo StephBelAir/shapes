@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 
 
-import {Shape} from "../Shape";
+import {IShape} from "../models/iShape";
 // import {ShapeList} from "../ShapeList";
 
 @Injectable({  providedIn: 'root'})
@@ -23,12 +23,12 @@ export class ShapeService {
     private http: HttpClient) { }
 
   /** GET shapes from the server */
-  getShapes(): Observable<Shape[]> {
-    return this.http.get<Shape[]>(this.shapesUrl);
+  getShapes(): Observable<IShape[]> {
+    return this.http.get<IShape[]>(this.shapesUrl);
   }
 
-  getShape(id: number): Observable<Shape> {
-    return this.http.get<Shape>(this.shapesUrl + "/" + id);
+  getShape(id: number): Observable<IShape> {
+    return this.http.get<IShape>(this.shapesUrl + "/" + id);
   }
 
 }

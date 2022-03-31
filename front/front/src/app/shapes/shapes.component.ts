@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Shape } from "../Shape";
+import { IShape } from "../models/iShape";
 import {ShapeService} from "../services/shape.service";
 
 @Component({
@@ -9,9 +9,9 @@ import {ShapeService} from "../services/shape.service";
 })
 export class ShapesComponent implements OnInit {
 
-  selectedShape?: Shape;
+  selectedShape?: IShape;
 
-  shapes: Shape[] = [];
+  shapes: IShape[] = [];
 
 
   constructor(private shapeService: ShapeService) { }

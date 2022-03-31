@@ -1,4 +1,4 @@
-export interface Shape {
+export interface IShape {
   id: number;
   type: string;
 //  base: number
