@@ -1,0 +1,8 @@
+<h2 class="text-3xl mb-10">Shapes List</h2>
+<div class="shapes-menu">
+
+  <a routerLink="/detail/{{shapesList.id}}" *ngFor="let shapesList of drawing">
+    {{shapesList.id}}
+  </a>
+<!--TODO  routerLink="/detail à transformer en /list detail-->
+</div>
