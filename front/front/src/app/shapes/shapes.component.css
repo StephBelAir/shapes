@@ -15,7 +15,7 @@
   background-color: #f8f8f8;
   margin: .5em;
   padding: .3em 0;
-  height: 1.6em;
+  height: 3em;
   border-radius: 4px;
   display: block;
   width: 100%;
@@ -37,6 +37,8 @@
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
   background-color: #405061;
+  height: 2.6em;
+
   line-height: 1em;
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
