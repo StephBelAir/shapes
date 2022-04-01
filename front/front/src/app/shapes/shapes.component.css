@@ -11,9 +11,8 @@
 }
 
 .shapes a {
-  color: #333;
   text-decoration: none;
-  background-color: #EEE;
+  background-color: #f8f8f8;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;

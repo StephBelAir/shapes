@@ -13,7 +13,7 @@ h2, h3 {
 .shapes-menu {
   padding: 0;
   margin: auto;
-  max-width: 200px;  /*change à 600 */
+  max-width: 1000px;  /*change à 600 */
   cursor: pointer;
 
   /* flexbox */
@@ -26,13 +26,13 @@ h2, h3 {
 }
 
 a {
-  background-color: #3f525c;
+ /* background-color: #3f525c;*/
+  border-style: inset;
   border-radius: 2px;
   padding: 1rem;
   font-size: 1.2rem;
   text-decoration: none;
   display: inline-block;
-  color: #fff;
   text-align: center;
   width: 100%;
   min-width: 70px;
@@ -53,5 +53,5 @@ a {
 }
 
 a:hover {
-  background-color: #000;
+  background-color: #E7E5E4;
 }

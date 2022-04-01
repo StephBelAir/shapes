@@ -1,11 +1,11 @@
-<h2 class="text-3xl mb-10">Shapes List</h2>
-<div class="shapes-menu">
+<h2 class="text-3xl mb-10">Shapes List by ID :</h2>
+<div class="shapes-menu border-4-black ">
 
 
-  <div *ngFor="let shapesList of drawing">  {{shapesList.id}}
-      <li class="cursor-pointer" *ngFor="let shape of shapesList.shapes">
+  <div class="text-xl p-12 divide-y" *ngFor="let shapesList of drawing"> ID {{shapesList.id}}
+      <li class="list-none cursor-pointer " *ngFor="let shape of shapesList.shapes">
         <a routerLink="/detail/{{shape.id}}">
-          <span class="badge">{{shape.id}}</span> {{shape.type}}
+          <span class="badge">{{shape.type}}</span> {{shape.id}}
         </a>
       </li>
   </div>
