@@ -1,10 +1,29 @@
 <div *ngIf="shape">
 
-  <h2>{{shape.type | uppercase}} Details</h2>
-  <div><span>id: </span>{{shape.id}}</div>
+  <h2>{{shape.type | uppercase}}</h2>
+  <div><span>ID: </span>{{shape.id}}</div>
   <div>
       <label for="shape-type">Shape type: </label>
       <input id="shape-type" [(ngModel)]="shape.type" placeholder="type">
+
+      <label for="shape-perimetre">perimetre: </label>
+      <input id="shape-perimetre" [(ngModel)]="shape.perimetre" placeholder="perimetre">
+
+      <label for="shape-perimetre">surface: </label>
+      <input id="shape-surface" [(ngModel)]="shape.surface" placeholder="surface">
+
+      <label for="shape-base">base: </label>
+      <input id="shape-base" [(ngModel)]="shape.base" placeholder="base">
+
+      <label for="shape-radius">radius: </label>
+      <input id="shape-radius" [(ngModel)]="shape.radius" placeholder="radius">
+
+      <label for="shape-width">width: </label>
+      <input id="shape-width" [(ngModel)]="shape.width" placeholder="width">
+
+      <label for="shape-height">height: </label>
+      <input id="shape-height" [(ngModel)]="shape.height" placeholder="height">
+
     </div>
     <button type="button" (click)="goBack()">go back</button>
   </div>
