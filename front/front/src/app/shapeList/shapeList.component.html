@@ -1,8 +1,20 @@
 <h2 class="text-3xl mb-10">Shapes List</h2>
 <div class="shapes-menu">
 
-  <a routerLink="/detail/{{shapesList.id}}" *ngFor="let shapesList of drawing">
-    {{shapesList.id}}
-  </a>
-<!--TODO  routerLink="/detail à transformer en /list detail-->
-</div>
+
+  <div *ngFor="let shapesList of drawing">  {{shapesList.id}}
+      <li class="cursor-pointer" *ngFor="let shape of shapesList.shapes">
+        <a routerLink="/detail/{{shape.id}}">
+          <span class="badge">{{shape.id}}</span> {{shape.type}}
+        </a>
+      </li>
+  </div>
+
+
+  <!-- <a routerLink="/detailList/{{shapesList.id}}" *ngFor="let shapesList of drawing">
+     {{shapesList.id}}
+   </a> -->
+ </div>
+
+ <!--<app-shape-list-detail [shapeList]="selectedShapeList"></app-shape-list-detail>-->
+

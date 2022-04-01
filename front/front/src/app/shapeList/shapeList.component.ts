@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ShapeService} from "../services/shape.service";
+import {IShape} from "../models/iShape";
+import {IShapeList} from "../models/iShapeList";
 
 @Component({
   selector: 'app-shapeList',
@@ -7,6 +9,9 @@ import {ShapeService} from "../services/shape.service";
   styleUrls: ['./shapeList.component.css']
 })
 export class ShapeListComponent implements OnInit {
+  //  selectedShape?: IShape;
+  selectedShapeList?: IShapeList;
+
   drawing: any;
 
 
@@ -14,12 +19,13 @@ export class ShapeListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getList();
+    this.getLists();
   }
 
-  getList(): void {    // any ?
-    this.shapeService.getList()
+ public getLists() {    // any ?
+    this.shapeService.getLists() //getList ??
       .subscribe((shapeList) => {
+        console.log(shapeList)
         this.drawing = shapeList;
       });
   }

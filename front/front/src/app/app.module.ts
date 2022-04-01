@@ -12,13 +12,15 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ShapesComponent } from './shapes/shapes.component';
 import { ShapeDetailComponent } from './shape-detail/shape-detail.component';
 import { ShapeListComponent } from './shapeList/shapeList.component';
+import { ShapeListDetailComponent } from './shape-list-detail/shape-list-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShapesComponent,
     ShapeDetailComponent,
-    ShapeListComponent
+    ShapeListComponent,
+    ShapeListDetailComponent
   ],
   imports: [
     BrowserModule,

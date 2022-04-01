@@ -31,8 +31,11 @@ export class ShapeService {
 
   /** GET shapeList from the server */
 
-  getList(): Observable<IShapeList[]>{
+  getLists(): Observable<IShapeList[]>{
     return this.http.get<IShapeList[]>(this.shapesUrl + "/List/");
+  }
+  getList(sheetId: number): Observable<IShapeList[]>{
+    return this.http.get<IShapeList[]>(this.shapesUrl + "/List/" + sheetId);
   }
 
 }
