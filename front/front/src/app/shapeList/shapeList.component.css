@@ -2,12 +2,11 @@
 
 
 h2, h3 {
-  color: #444;
+  color: #369;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: lighter;
   text-align: center;
 }
-
 
 
 .shapes-menu {
@@ -26,8 +25,6 @@ h2, h3 {
 }
 
 a {
- /* background-color: #3f525c;*/
-  border-style: inset;
   border-radius: 2px;
   padding: 1rem;
   font-size: 1.2rem;
