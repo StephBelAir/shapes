@@ -1,5 +1,5 @@
 <h2 class="text-3xl mb-10">Shapes List by ID :</h2>
-<div class="shapes-menu border-4-black ">
+<div class="shapes-menu">
 
 
   <div class="text-xl p-12 divide-y" *ngFor="let shapesList of drawing"> ID {{shapesList.id}}
@@ -8,6 +8,13 @@
           <span class="badge">{{shape.type}}</span> {{shape.id}}
         </a>
       </li>
+
+      <div class="rounded-sm p-4 text-xl no-underline inline-block w-full box-border order-none self-auto">
+        <li class="list-none"> totalArea : {{shapesList.totalSurface}}</li>
+        <li class="list-none">totalPerimeter : {{shapesList.totalPerimetre}}</li> </div>
+
+
+
   </div>
 
 
