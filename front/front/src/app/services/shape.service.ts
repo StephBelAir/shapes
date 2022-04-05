@@ -40,11 +40,23 @@ export class ShapeService {
     return this.http.get<IShapeList[]>(this.shapesUrl + "/List/" + sheetId);
   }
 
-  /** POST: add a new List to the server */
+  /** POST: add new List to the server */
 
     addList(): Observable<any>{
     return this.http.post<any>(this.shapesUrl+ "/List/addList", this.httpOptions);
   }
+
+  /** DELETE List from the server */
+
+
+  deleteList(sheetId: any): Observable<any>{
+    return this.http.delete<any>(this.shapesUrl+ "/List"+"/"+ sheetId);
+  }
+
+  deleteAllList(): Observable<any>{
+    return this.http.delete<any>(this.shapesUrl + "/List");
+  }
+
 
 
 

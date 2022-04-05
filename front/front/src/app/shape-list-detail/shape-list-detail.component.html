@@ -4,9 +4,12 @@
   <div class="pr-24">
     <input id="new-shapeList" #shapeListID />
     <button type="button" class="add-button" (click)="addNewList()">+</button>
+    <button type="button" class="add-button" (click)="deleteAllList()">X All</button>
+
   </div>
 
-  <a routerLink="/shapeList/{{shapesList.id}}" *ngFor="let shapesList of drawing">    {{shapesList.id}}
+  <a  *ngFor="let shapesList of drawing">    {{shapesList.id}} <button type="button" class="delete" title="delete hero" >x</button>
   </a>
+   <!-- -->
 </div>
 

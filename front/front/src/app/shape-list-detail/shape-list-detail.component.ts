@@ -34,13 +34,15 @@ export class ShapeListDetailComponent implements OnInit {
     this.shapeService.addList().subscribe();
   }
 
+  deleteList(sheetId: any){
+    this.shapeService.deleteList(sheetId).subscribe();
+  }
 
-  /** add(): void {
-    this.shapeService.addShapeList({ id } as ShapeListDetailComponent)
-      .subscribe(shapeList => {
-        this.shapeLists.push(shapeList);
-      });
-  } */
+  deleteAllList(){
+    this.shapeService.deleteAllList().subscribe();
+  }
+
+
 
 
 
