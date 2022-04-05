@@ -35,7 +35,7 @@ public class BackApplication {
 		return args -> {
 
 			Form created;
-			for (int j = 0; j < 5; j++) {
+			for (int j = 0; j < 4; j++) {
 				ShapeList list = new ShapeList();
 				for (int i = 0; i < 3; i++) {
 					created = new Triangle(i%17);

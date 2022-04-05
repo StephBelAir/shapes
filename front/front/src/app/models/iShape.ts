@@ -8,4 +8,3 @@ export interface IShape {
   perimetre: number;
   surface: number
 }
-/** TODO Add perimetre surface, radius, height width... */

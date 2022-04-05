@@ -3,8 +3,6 @@ import {ActivatedRoute} from "@angular/router";
 import { Location } from "@angular/common";
 import {ShapeService} from "../services/shape.service";
 
-import {IShapeList} from "../models/iShapeList";
-//import {IShape} from "../models/iShape";
 
 @Component({
   selector: 'app-shape-list-detail',
@@ -12,9 +10,7 @@ import {IShapeList} from "../models/iShapeList";
   styleUrls: ['./shape-list-detail.component.css']
 })
 export class ShapeListDetailComponent implements OnInit {
-  @Input() shapeList?: IShapeList[];
-//  @Input() shape?: IShape;
-
+  drawing: any;
 
 
   constructor(
@@ -24,19 +20,28 @@ export class ShapeListDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getList();
+    this.getLists();
   }
 
-  getList(): void{
-    const sheetId = Number(this.route.snapshot.paramMap.get('sheetId'));
-    this.shapeService.getList(sheetId)
-      .subscribe(shapeList => this.shapeList = shapeList);
-
-    //.subscribe(shapeList => this.shapeList = shapeList);
+  getLists(): void {    // any ?
+    this.shapeService.getLists()
+      .subscribe((shapeList) => {
+        this.drawing = shapeList;
+      });
   }
 
-  goBack(): void {
-    this.location.back();
+  addNewList(){
+    this.shapeService.addList().subscribe();
   }
+
+
+  /** add(): void {
+    this.shapeService.addShapeList({ id } as ShapeListDetailComponent)
+      .subscribe(shapeList => {
+        this.shapeLists.push(shapeList);
+      });
+  } */
+
+
 
 }

@@ -1,11 +1,12 @@
-<!--
-<div *ngIf="shapeList">
+<h2 class="text-3xl mb-10">Shapes List</h2>
+<div class="shapes-menu">
 
-  <h2>{{shapeList.id | uppercase}} Lists</h2>
-  <div><span>id: </span>{{shapeList.id}}</div>
-  <div>
-    <label for="shapeList-id">List id: </label>
-    <input id="shapeList-id" [(ngModel)]="shapeList.id" placeholder="id">
+  <div class="pr-24">
+    <input id="new-shapeList" #shapeListID />
+    <button type="button" class="add-button" (click)="addNewList()">+</button>
   </div>
-  <button type="button" (click)="goBack()">go back</button>
-</div>-->
+
+  <a routerLink="/shapeList/{{shapesList.id}}" *ngFor="let shapesList of drawing">    {{shapesList.id}}
+  </a>
+</div>
+

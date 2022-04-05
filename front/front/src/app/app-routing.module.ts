@@ -8,6 +8,7 @@ import { ShapeListDetailComponent} from "./shape-list-detail/shape-list-detail.c
 const routes: Routes = [
   { path: '', redirectTo: '/shapeList', pathMatch: 'full' },
   { path: 'shapeList', component: ShapeListComponent},
+  { path: 'shapeListDetails', component: ShapeListDetailComponent},
   { path: 'shapeList/:id', component: ShapeListComponent},
   { path: 'detail/:id', component: ShapeDetailComponent }, //sheetID
   { path: 'shapes', component: ShapesComponent },

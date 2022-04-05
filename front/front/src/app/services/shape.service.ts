@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 
 import {IShape} from "../models/iShape";
 import {IShapeList} from "../models/iShapeList";
+import {ShapeListComponent} from "../shapeList/shapeList.component";
+import {tap} from "rxjs/operators";
 
 @Injectable({  providedIn: 'root'})
 export class ShapeService {
@@ -37,6 +39,15 @@ export class ShapeService {
   getList(sheetId: number): Observable<IShapeList[]>{
     return this.http.get<IShapeList[]>(this.shapesUrl + "/List/" + sheetId);
   }
+
+  /** POST: add a new List to the server */
+
+    addList(): Observable<any>{
+    return this.http.post<any>(this.shapesUrl+ "/List/addList", this.httpOptions);
+  }
+
+
+
 
 }
 
