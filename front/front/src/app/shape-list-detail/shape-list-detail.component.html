@@ -4,11 +4,11 @@
   <div class="pr-24">
     <input id="new-shapeList" #shapeListID />
     <button type="button" class="add-button" (click)="addNewList()">+</button>
-    <button type="button" class="add-button" (click)="deleteAllList()">X All</button>
+    <button type="button" class="add-button" (click)="deleteAllList()">- All</button>
 
   </div>
 
-  <a  *ngFor="let shapesList of drawing">    {{shapesList.id}} <button type="button" class="delete" title="delete hero" >x</button>
+  <a  *ngFor="let shapesList of drawing">    {{shapesList.id}} <button class="add-button" class="delete" title="delete hero" (click)="deleteList(shapesList.id)"  >-</button>
   </a>
    <!-- -->
 </div>
