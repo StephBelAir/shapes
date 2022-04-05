@@ -36,8 +36,8 @@ export class ShapeService {
   getLists(): Observable<IShapeList[]>{
     return this.http.get<IShapeList[]>(this.shapesUrl + "/List/");
   }
-  getList(sheetId: number): Observable<IShapeList[]>{
-    return this.http.get<IShapeList[]>(this.shapesUrl + "/List/" + sheetId);
+  getList(sheetId: number): Observable<IShapeList>{
+    return this.http.get<IShapeList>(this.shapesUrl + "/List/" + sheetId);
   }
 
   /** POST: add new List to the server */

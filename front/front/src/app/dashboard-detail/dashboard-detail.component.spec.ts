@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShapeListDetailComponent } from './shape-list-detail.component';
+import { DashboardDetailComponent } from './dashboard-detail.component';
 
-describe('ShapeListDetailComponent', () => {
-  let component: ShapeListDetailComponent;
-  let fixture: ComponentFixture<ShapeListDetailComponent>;
+describe('DashboardDetailComponent', () => {
+  let component: DashboardDetailComponent;
+  let fixture: ComponentFixture<DashboardDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ShapeListDetailComponent ]
+      declarations: [ DashboardDetailComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ShapeListDetailComponent);
+    fixture = TestBed.createComponent(DashboardDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,14 +2,20 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import { Location } from "@angular/common";
 import {ShapeService} from "../services/shape.service";
+import {IShape} from "../models/iShape";
+import {IShapeList} from "../models/iShapeList";
 
 
 @Component({
-  selector: 'app-shape-list-detail',
-  templateUrl: './shape-list-detail.component.html',
-  styleUrls: ['./shape-list-detail.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class ShapeListDetailComponent implements OnInit {
+export class DashboardComponent implements OnInit {
+
+  selectedShapeList?: IShapeList;
+
+
   drawing: any;
 
 

@@ -12,7 +12,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ShapesComponent } from './shapes/shapes.component';
 import { ShapeDetailComponent } from './shape-detail/shape-detail.component';
 import { ShapeListComponent } from './shapeList/shapeList.component';
-import { ShapeListDetailComponent } from './shape-list-detail/shape-list-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShapeListDetailComponent } from './shape-list-detail/shape-list-detail.
     ShapesComponent,
     ShapeDetailComponent,
     ShapeListComponent,
-    ShapeListDetailComponent
+    DashboardComponent,
+    DashboardDetailComponent
   ],
   imports: [
     BrowserModule,
