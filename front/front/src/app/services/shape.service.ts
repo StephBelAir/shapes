@@ -19,10 +19,10 @@ export class ShapeService {
   };
 
 
-  constructor(
-    private http: HttpClient) { }
+constructor( private http: HttpClient ) { }
 
   /** GET shapes from the server */
+
   getShapes(): Observable<IShape[]> {
     return this.http.get<IShape[]>(this.shapesUrl);
   }
@@ -31,7 +31,7 @@ export class ShapeService {
     return this.http.get<IShape>(this.shapesUrl + "/" + id);
   }
 
-  /** GET shapeList from the server */
+  /** GET from the server */
 
   getLists(): Observable<IShapeList[]>{
     return this.http.get<IShapeList[]>(this.shapesUrl + "/List/");
@@ -40,14 +40,17 @@ export class ShapeService {
     return this.http.get<IShapeList>(this.shapesUrl + "/List/" + sheetId);
   }
 
-  /** POST: add new List to the server */
+  /** POST: to the server */
 
     addList(): Observable<any>{
     return this.http.post<any>(this.shapesUrl+ "/List/addList", this.httpOptions);
   }
 
-  /** DELETE List from the server */
+    addShapeInList(sheetId: any): Observable<any>{
+      return this.http.post<any>(this.shapesUrl+"/List"+"/"+ sheetId+"/add", this.httpOptions);
+    }
 
+  /** DELETE from the server */
 
   deleteList(sheetId: any): Observable<any>{
     return this.http.delete<any>(this.shapesUrl+ "/List"+"/"+ sheetId);

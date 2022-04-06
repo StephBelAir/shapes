@@ -36,6 +36,8 @@ export class DashboardComponent implements OnInit {
     this.getLists();
   }
 
+  /** GET from the server */
+
   getLists(): void {    // any ?
     this.shapeService.getLists()
       .subscribe((shapeList) => {
@@ -43,9 +45,17 @@ export class DashboardComponent implements OnInit {
       });
   }
 
+  /** POST: to the server */
+
   addNewList(){
     this.shapeService.addList().subscribe();
   }
+
+  addShapesInList(sheetId: any){
+    this.shapeService.addShapeInList(sheetId).subscribe();
+  }
+
+  /** DELETE from the server */
 
   deleteList(sheetId: any){
     this.shapeService.deleteList(sheetId).subscribe();
