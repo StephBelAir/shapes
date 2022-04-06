@@ -13,7 +13,7 @@ h2, h3 {
 .shapes-menu {
   padding: 0;
   margin: auto;
-  max-width: 200px;  /*change à 600 */
+  max-width: 2000px;  /*change à 600 */
   cursor: pointer;
 
   /* flexbox */
@@ -42,6 +42,7 @@ a {
   order: 0;
   flex: 0 1 auto;
   align-self: auto;
+
 }
 
 @media (min-width: 600px) {
