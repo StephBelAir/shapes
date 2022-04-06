@@ -15,6 +15,7 @@ h2, h3 {
   max-width: 1000px;  /*change à 600 */
   cursor: pointer;
 
+
   /* flexbox */
   display: flex;
   flex-direction: row;

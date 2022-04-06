@@ -46,8 +46,8 @@ constructor( private http: HttpClient ) { }
     return this.http.post<any>(this.shapesUrl+ "/List/addList", this.httpOptions);
   }
 
-    addShapeInList(sheetId: any): Observable<any>{
-      return this.http.post<any>(this.shapesUrl+"/List"+"/"+ sheetId+"/add", this.httpOptions);
+    addShapeInList(sheetId: any, shape: any): Observable<any>{
+      return this.http.post<any>(this.shapesUrl+"/List"+"/"+ sheetId+"/add", shape, this.httpOptions);
     }
 
   /** DELETE from the server */

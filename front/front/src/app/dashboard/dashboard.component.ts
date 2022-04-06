@@ -6,6 +6,8 @@ import {IShape} from "../models/iShape";
 import {IShapeList} from "../models/iShapeList";
 
 
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -51,9 +53,7 @@ export class DashboardComponent implements OnInit {
     this.shapeService.addList().subscribe();
   }
 
-  addShapesInList(sheetId: any){
-    this.shapeService.addShapeInList(sheetId).subscribe();
-  }
+
 
   /** DELETE from the server */
 

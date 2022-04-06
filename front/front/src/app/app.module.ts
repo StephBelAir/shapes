@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
 
-import {FormsModule} from "@angular/forms";
+import {FormBuilder, FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -14,6 +14,7 @@ import { ShapeDetailComponent } from './shape-detail/shape-detail.component';
 import { ShapeListComponent } from './shapeList/shapeList.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.component';
+import { DashboardFormComponent } from './dashboard-form/dashboard-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.co
     ShapeDetailComponent,
     ShapeListComponent,
     DashboardComponent,
-    DashboardDetailComponent
+    DashboardDetailComponent,
+    DashboardFormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,7 @@ import { DashboardDetailComponent } from './dashboard-detail/dashboard-detail.co
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
