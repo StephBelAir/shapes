@@ -15,6 +15,13 @@ export class DashboardComponent implements OnInit {
 
   selectedShapeList?: IShapeList;
 
+  shapeLists: IShapeList[] = [];
+
+
+  onSelect(shapeList: IShapeList): void {
+    this.selectedShapeList = shapeList;
+  }
+
 
   drawing: any;
 
@@ -46,6 +53,10 @@ export class DashboardComponent implements OnInit {
 
   deleteAllList(){
     this.shapeService.deleteAllList().subscribe();
+  }
+
+  deleteShapeFromList(sheetID: any, id: any){
+    this.shapeService.deleteShapeFromList(sheetID, id).subscribe()
   }
 
 

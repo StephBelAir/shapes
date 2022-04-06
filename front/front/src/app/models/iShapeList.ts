@@ -1,7 +1,7 @@
 import {IShape } from "./iShape";
 
 export interface IShapeList {
-  sheetId: number;
+  sheetId: any;
   shapes: IShape[];
   totalSurface: number;
   totalPerimetre: number;

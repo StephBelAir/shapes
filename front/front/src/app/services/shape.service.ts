@@ -57,6 +57,10 @@ export class ShapeService {
     return this.http.delete<any>(this.shapesUrl + "/List");
   }
 
+  deleteShapeFromList(sheetId: any, id: any): Observable<any>{
+    return this.http.delete<any>(this.shapesUrl+"/List"+"/"+ sheetId +"/"+ id );
+  }
+
 
 
 

@@ -2,31 +2,26 @@
 <div class="shapes-menu">
 
   <div class="pr-24">
-    <input id="new-shapeList" #shapeListID />
+    <input id="new-shapeList" #shapeList />
     <button type="button" class="add-button" (click)="addNewList()">+</button>
     <button type="button" class="add-button" (click)="deleteAllList()">- ALL</button>
-
   </div>
 
-  <a routerLink="/shapeListDetails/{{shapesList.id}}" *ngFor="let shapesList of drawing">    {{shapesList.id}}   <button class="add-button" class="delete" title="delete hero" (click)="deleteList(shapesList.id)"  >-</button>
-    <!--     <li class="list-none cursor-pointer " *ngFor="let shapes of shapesList.shapes">
-          <a routerLink="/shapeListDetails/{{shapesListe.id}}">
-          </a>  -->
-
-
-    <!--     <li class="list-none cursor-pointer " *ngFor="let shapes of shapesList.shapes">
-          <a routerLink="/detail/{{shapes.id}}">
-            <span class="badge">{{shapes.type}}</span> {{shapes.id}}
-          </a>  -->
-
-
-      </a>
-
-
-
+    <div *ngFor="let form of drawing" class="DashList">
+      <a routerLink="/{{ form.id }}">    {{form.id}}</a>
+        <button class="add-button" class="delete" title="delete list" (click)="deleteList(form.id)">-</button>
+        <ul class="shapes">
+        <li class="cursor-pointer" *ngFor="let shape of form.shapes">
+          <a routerLink="/detail/{{shape.id}}">{{ shape.type | titlecase }}</a>
+          <button class="add-button" class="delete" title="delete list" (click)="deleteShapeFromList(form.id, shape.id)">-</button>
+        </li>
+      </ul>
+      <button type="button" class="add-button">+</button>
     </div>
 
-    <app-dashboard-detail [shapeList]="selectedShapeList"></app-dashboard-detail>
+
+</div>
+
 
 
 
