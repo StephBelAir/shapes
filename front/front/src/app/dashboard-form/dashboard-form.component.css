@@ -1,0 +1,26 @@
+.container {
+  border-radius: 4px;
+  padding: 20px 30px;
+  box-shadow: lightgray 2px 2px 5px;
+  width: 29%;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  margin-left: 50px;
+  margin-top: 5px;
+}
+
+.action-buttons {
+  margin-left: 200px;
+
+}
+
+button {
+  padding: 5px;
+}
+
+h2 {
+  padding-bottom: 15px;
+}

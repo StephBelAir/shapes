@@ -1,0 +1,39 @@
+<div class="container">
+
+    <h2>Add shape</h2>
+
+  <form [formGroup]="formGroup">
+          <div class="form-group">
+            <label for="type">Type   </label>
+            <select class="form-control" formControlName="type" id="type" required>
+              <option *ngFor="let shapeType of types" [value]="shapeType">{{shapeType}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sheetId">List ID   </label>
+            <input type="text" class="form-control" id="sheetId"
+                  name="sheetId" #sheetId>
+          </div>
+
+          <div class="form-group">
+            <label for="sheetId">Length   </label>
+            <input type="text" class="form-control" id="length"
+                   name="sheetId" #length>
+          </div>
+
+          <div class="form-group">
+            <label for="sheetId">Width  </label>
+            <input type="text" class="form-control" id="width"
+                   name="sheetId" #width>
+          </div>
+
+          <div class="action-buttons">
+            <button type="submit"(click)="addShapesInList(sheetId.value, formGroup.controls['type'].value, width.value, length.value)">Add</button>
+          </div>
+
+
+  </form>
+
+</div>
+
