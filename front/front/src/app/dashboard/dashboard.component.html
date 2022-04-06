@@ -1,11 +1,14 @@
 <h2 class="text-3xl mb-10">Shapes List ID:</h2>
+
+<div class="pl-96">
+  <input id="new-shapeList" #shapeList />
+  <button type="button" class="add-button" (click)="addNewList()">+</button>
+  <button type="button" class="add-button" (click)="deleteAllList()">- ALL</button>
+  <button type="button" class="add-button" (click)="getLists()">Submit</button>
+</div>
+
 <div class="shapes-menu">
 
-  <div class="pr-24">
-    <input id="new-shapeList" #shapeList />
-    <button type="button" class="add-button" (click)="addNewList()">+</button>
-    <button type="button" class="add-button" (click)="deleteAllList()">- ALL</button>
-  </div>
 
     <div *ngFor="let form of drawing" class="DashList">
       <a routerLink="/{{ form.id }}">    {{form.id}}</a>
