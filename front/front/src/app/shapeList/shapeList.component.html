@@ -5,13 +5,13 @@
   <div class="text-xl p-12 divide-y" *ngFor="let shapesList of drawing"> ID {{shapesList.id}}
       <li class="list-none cursor-pointer " *ngFor="let shape of shapesList.shapes">
         <a routerLink="/detail/{{shape.id}}">
-          <span class="badge">{{shape.type}}</span> {{shape.id}}
+          <span class="badge">{{shape.type | titlecase}}</span> {{shape.id}}
         </a>
       </li>
 
       <div class="rounded-sm p-4 text-xl no-underline inline-block w-full box-border order-none self-auto">
-        <li class="list-none"> totalArea : {{shapesList.totalSurface}}</li>
-        <li class="list-none">totalPerimeter : {{shapesList.totalPerimetre}}</li> </div>
+        <li class="list-none"> TotalArea : {{shapesList.totalSurface}}</li>
+        <li class="list-none">TotalPerimeter : {{shapesList.totalPerimetre}}</li> </div>
 
 
 

@@ -3,7 +3,7 @@
 <ul class="shapes">
   <li class="cursor-pointer" *ngFor="let shape of shapes">
     <a routerLink="/detail/{{shape.id}}">
-      <span class="badge">{{shape.id}}</span> {{shape.type}}
+      <span class="badge">{{shape.id}}</span> {{shape.type| titlecase}}
     </a>
   </li>
 </ul>
